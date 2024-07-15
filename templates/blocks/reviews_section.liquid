@@ -1,0 +1,25 @@
+{% assign alignment = content_block.alignment %}
+
+<section class="sc-section-reviews tns-cards" data="{{ content_block.identifier }}">
+  <div class="sc-container">
+    <div class="sc-section_header sc-pe {% if alignment == 'center-text' %}sc-text-center{% endif %}">
+      {%- if content_block.title != blank %}
+        <h2 class="sc-section_heading">{{ content_block.title }}</h2>
+      {%- endif %}
+      {%- if content_block.subtitle != blank %}
+        <p class="sc-section_subheading">{{ content_block.subtitle }}</p>
+      {%- endif %}
+      {% comment %} available for custom styling on header {% endcomment %}
+      {%- if content_block.pull_text %}
+        {{ content_block.pull_text }}
+      {%- endif %}
+    </div>
+    <div class="sc-flex sc-pe" data-featured-slider="{{ content_block.identifier }}">
+      {%- for child in content_block.children %}
+        <div>
+          {{ child.render }}
+        </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

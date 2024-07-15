@@ -1,0 +1,52 @@
+{% assign alignment = content_block.alignment %}
+{% assign count = content_block.products.size %}
+
+<div
+  class="SC-ContentBlock SC-FeaturedProducts{% if count >= 4 %} tns-cards{% endif %}"
+  id="{% if content_block.identifier != blank %}SC-ContentBlock-{{ content_block.identifier }}{% endif %}"
+  data-cb="{{ content_block.identifier }}">
+
+  {%- if content_block.products.size > 0 %}
+    <div class="SC-CardCarousel">
+      <div class="SC-CardCarousel_header sc-section_header sc-three-quarters-medium-and-up sc-ms-auto sc-flex-col {% if alignment == 'center-text' %}sc-text-center{% endif %}">
+        {%- unless content_block.title == blank %}
+          <h2 class="SC-CardCarousel_heading sc-section_heading">
+            {{ content_block.title }}
+          </h2>
+        {%- endunless %}  
+        {% comment %}  for custom header if neeeded {% endcomment %}
+        {%- if content_block.pull_text %}
+          {{ content_block.pull_text }}
+        {%- endif %}
+      </div>
+
+      {%- if count <= 4 %}
+        <div class="sc-grid sc-two-to-four-column">
+          {%- for product in content_block.products %}
+            <div class="sc-grid_item">
+              {%- render "products/card", product: product %}
+            </div>
+          {%- endfor %}
+        </div>
+      {%- elsif count >  4 %}
+        <div class="sc-pb-small sc-flex" data-featured-slider="{{ content_block.identifier }}">
+          {%- for product in content_block.products %}
+            <div class="sc-grid_item">
+              {%- render "products/card", product: product %}
+            </div>
+          {%- endfor %}
+        </div>
+      {%- endif %}
+      
+      {% comment %} Decision making: UX 
+      {%- if content_block.link_label != blank and content_block.link_target != blank %}
+      <div class="sc-flex sc-justify-center sc-three-quarters sc-ms-auto sc-mt-medium">
+        <a href="{{ content_block.link_target }}" class="SC-Button SC-Button-outline sc-font-medium sc-font-normal sc-uppercase">
+          {{ content_block.link_label }}
+        </a>
+      </div>
+      {%- endif %}
+      {% endcomment %}
+    </div>
+  {%- endif %}
+</div>

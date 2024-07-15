@@ -1,0 +1,24 @@
+{% assign alignment = content_block.alignment %}
+{% assign type = content_block.sub_type %}
+
+<section class="sc-section-banner" style="background-image: url('{{ all_media['special-offers'].url }}');" id="sc-section-{{content_block.identifier }}">
+  <div class="sc-container">
+    <div class="sc-section_inner sc-flex sc-justify-space-between sc-align-items-center {% if alignment == 'center-text' %}sc-text-center{% endif %}">
+      <div class="sc-expand sc-one-half-medium-and-up">
+        {%- if content_block.title != blank %}
+          <h2 class="sc-font-huge sc-font-normal sc-uppercase {% if type == 'offset' %}sc-color-primary{% endif %}">{{ content_block.title }}</h2>
+        {%- endif %}
+        {%- if content_block.subtitle != blank %}
+          <p class="{% if type == 'offset' %}sc-shade-light{% endif %}">{{ content_block.subtitle }}</p>
+        {%- endif %}
+      </div>
+      <div class="sc-expand sc-one-half-medium-and-up">
+        {%- if content_block.link_target and content_block.link_label %}
+          <a href="{{ content_block.link_target }}" class="SC-Button-transparent sc-uppercase">
+            {{ content_block.link_label }}
+          </a>
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+</section>

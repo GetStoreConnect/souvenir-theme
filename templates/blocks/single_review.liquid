@@ -1,0 +1,21 @@
+<div class="sc-stamped-ratings_wrapper">
+  <div class="sc-stamped-reviews-image_wrapper sc-hide">
+    <a href="{{ content_block.link_target }}">
+      <img src="{{ all_media['gravatar'].url }}" alt="{{ all_media['gravatar'].alt_text }}" class="sc-stamped-reviews_image" />
+    </a>
+  </div>
+  <div class="sc-stamped-reviews_rating">
+    {%- render 'shared/icons/star', height: '16', width: '18' %}
+    {%- render 'shared/icons/star', height: '16', width: '18' %}
+    {%- render 'shared/icons/star', height: '16', width: '18' %}
+    {%- render 'shared/icons/star', height: '16', width: '18' %}
+    {%- render 'shared/icons/star', height: '16', width: '18' %}
+  </div>
+  <div class="sc-stamped-reviews_label">
+    <a href="{{ content_block.link_target }}" rel="nofollow" class="sc-stamped-review_product">
+      {{ content_block.link_label }}
+    </a>
+  </div>
+  <p class="sc-stamped-reviews_message sc-m-none">{{ content_block.content | strip_html }}</p>
+  <p class="sc-stamped-reviews_title sc-font-bold sc-m-none">{{ content_block.title }}</p>
+</div>

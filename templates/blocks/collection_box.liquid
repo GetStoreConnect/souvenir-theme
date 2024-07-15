@@ -1,0 +1,18 @@
+{% assign alignment = content_block.alignment %}
+{% assign type = content_block.sub_type %}
+
+<div class="sc-collection-box{% if type != blank %} {{ type }}{% endif %}" id="{{ content_block.identifier }}">
+  {%- if content_block.title %}
+    <div class="sc-collection-box_title{% if alignment != blank %} {{ alignment }}{% endif %}">
+      {{ content_block.title }}
+    </div>
+  {%- endif %}
+  <div class="sc-collection-box_image sc-expand">
+    {%- if content_block.image != blank %}
+      <a href="{{ content_block.link_target }}" class="sc-collection-box_link">
+        <img src="{{ content_block.image.large_url }}" alt="{{ content_block.image.alt_text }}">
+      </a>
+    {%- endif %}
+  </div>
+  <a href="{{ content_block.link_target }}" class="sc-collection-box_overlay sc-display-block"></a>
+</div>
