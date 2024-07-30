@@ -1,0 +1,93 @@
+{%- cache "header", items: [current_store, current_customer, current_cart]  -%}
+  {% liquid
+    assign menu_identifier = current_store.header_menu | try: "identifier" | default: "header"  
+  %}
+  {%- if current_store.header != blank %}
+    {{ current_store.header.render }}
+  {%- else %}
+    {%- capture store_logo %}
+      <a href="{{ current_store.home_path }}" class="SC-Logo">
+        {%- if current_store.logo != blank %}
+          <img src="{{ current_store.logo.url }}" class="SC-Logo_image">
+        {%- else %}
+          <svg
+            class="SC-Placeholder"
+            width="180px"
+            viewBox="0 0 180 40">
+            <rect
+              width="100%"
+              height="100%"
+              rx="20"></rect>
+          </svg>
+        {%- endif %}
+      </a>
+    {%- endcapture %}
+
+    {% comment %}Top header content {% endcomment %}
+    {%- assign top_header_state = theme_variables["header.top.header.state"] | default: blank %}
+
+    <header class="sc-header" id="sc-header">
+      <div class="sc-header_top sc-hide-up-to-large">
+        {% if top_header_state == 'active' %}
+          {%- render 'header/top_menu' %}
+        {% endif %}
+      </div>
+      {%- render "header/geolocation" %}
+      <div class="sc-header_search sc-flex sc-justify-center sc-pt-medium is-hidden" data-toggle-visibility-target="sc-header_search">
+        <div class="sc-md:40vw">
+        {%- render "header/search" %}
+        </div>
+      </div>
+      <nav class="sc-header_inner sc-flex sc-justify-space-between sc-align-items-center sc-gap-small sc-gap-large-medium-and-up sc-expand sc-ps-small sc-lg:pt-small sc-md:ps-medium sc-lg:ps-large sc-ms-auto">
+        <div class="sc-header_inner_left">
+          <button
+            data-menu-init="{{ menu_identifier }}"
+            class="SC-Icon sc-hide-large-and-up"
+            type="button">
+            {%- render "shared/icons/hamburger", style_class: "sc-pointer-events-none" %}
+          </button>
+          <div class="sc-hide-up-to-large">
+            {{ store_logo }}
+          </div>
+        </div>
+
+        <div class="sc-header_inner_center sc-grow sc-flex sc-justify-center sc-align-items-end sc-gap-large">
+          <div class="sc-hide-large-and-up">
+            {{ store_logo }}
+          </div>
+          <div class="sc-grow sc-hide-up-to-large">
+            {%- render "header/search" %}
+          </div>
+          {%- render "header/boxes" %}
+        </div>
+
+        <div class="sc-header_inner_right"> 
+          <ul class="sc-menu sc-flex sc-gap-base sc-align-items-center sc-justify-end sc-font-small">
+            {%- render "header/dropdown/cart" %}
+          </ul>
+        </div>
+      </nav>
+      <div class="SC-Navbar">
+        <div class="SC-Navbar_inner sc-ms-auto">
+          <nav class="sc-nav sc-pos-relative sc-flex sc-gap sc-align-items-center">
+            {%- if current_store.header_menu != blank %}
+              {{ current_store.header_menu.render }}
+              {%- render "header/dropdown/search" %}
+            {%- else %}
+              <ul
+                class="SC-Menu dropdown tier1 center sc-pos-relative"
+                id="SC-HeaderMenuPrimary"
+                data-menu="header">
+                {%- render "header/menu" %}
+              </ul>
+              {%- render "header/dropdown/search" %}
+            {%- endif %}
+          </nav>
+          <div class="sc-hide-large-and-up sc-md:mb-small">
+            {%- render "header/search" %}
+          </div>
+        </div>
+      </div>
+    </header>
+  {%- endif %}
+{%- endcache %}

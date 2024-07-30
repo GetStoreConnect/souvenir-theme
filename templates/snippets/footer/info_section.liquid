@@ -1,0 +1,58 @@
+{% liquid 
+  assign footer_store_address = theme_variables["footer.store.location.address"] | default: blank
+  assign footer_store_opening_hours = theme_variables["footer.store.opening.hours"] | default: blank 
+  assign footer_store_phone_number = theme_variables["footer.store.location.phone.number"] | default: blank
+  assign footer_store_fb_link = theme_variables["footer.store.facebook.link"] | default: blank
+  assign footer_store_fb_link_label = theme_variables["footer.store.facebook.link.label"] | default: blank
+  assign footer_store_linkedin_link = theme_variables["footer.store.linkedin.link"] | default: blank
+  assign footer_store_linkedin_link_label = theme_variables["footer.store.linkedin.link.label"] | default: blank
+%}
+
+<section class="SC-Footer_section">
+  <div class="sc-container">
+    <div class="sc-flex-col-to-row sc-justify-space-between sc-md:align-items-center sc-gap-large sc-font-thin">
+      <div class="SC-Logo" style="width: fit-content;">
+        <img lazy="loading" src="{{ current_store.logo.url }}" alt="{{ current_store.logo.alt_text }}" class="SC-Logo_image sc-ms-auto">
+      </div>
+      <div class="SC-Footer_address sc-font-small">
+        <ul class="sc-flex-col sc-gap-small sc-list-none sc-p-none sc-m-none" style="max-width: 320px">
+          {% comment %} Store Address {% endcomment %}
+          {%- unless footer_store_address == blank %}
+          <li class="sc-flex sc-gap-tiny">
+            {%- render "shared/icons/location", width: '16px' %}
+            <span>{{ footer_store_address }}</span>
+          </li>
+          {% endunless %}
+          {% unless footer_store_opening_hours == blank %}
+          <li class="sc-flex sc-gap-tiny sc-align-items-center">
+            {%- render "shared/icons/store", width: '16px' %}
+            <span>{{ footer_store_opening_hours }}</span>
+          </li>
+          {% endunless %}
+        </ul>
+      </div>
+      <div class="SC-Footer_contact">
+        <ul class="sc-flex-col sc-gap-small sc-list-none sc-p-none sc-m-none">
+          {% unless footer_store_phone_number == blank %}
+          <li class="sc-flex sc-gap-tiny">
+            {%- render "shared/icons/phone", width: '16px' %}
+            <span class="sc-display-inline-block">{{ footer_store_phone_number }}</span>
+          </li>
+          {% endunless %}
+          {% unless footer_store_fb_link == blank %}
+          <li class="sc-flex sc-gap-tiny">
+            {%- render "shared/icons/facebook", width: '16px' %}
+            <a href="{{ footer_store_fb_link }}" target="_blank">{{ footer_store_fb_link_label }}</a>
+          </li>
+          {% endunless %}
+          {% unless footer_store_linkedin_link == blank %}
+          <li class="sc-flex sc-gap-tiny">
+            {%- render "shared/icons/linkedin", width: '16px' %}
+            <a href="{{ footer_store_linkedin_link }}" target="_blank">{{ footer_store_linkedin_link_label }}</a>
+          </li>
+          {% endunless %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

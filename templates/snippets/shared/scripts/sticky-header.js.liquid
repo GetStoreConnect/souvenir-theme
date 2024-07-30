@@ -1,0 +1,26 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const headerElement = document.querySelector("#sc-header");
+  const headerHeight = headerElement.getBoundingClientRect().height / 2;
+  const navElement = document.querySelector("div.SC-Navbar");
+
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navElement.classList.remove("sticky");
+      } else {
+        navElement.classList.add("sticky");
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0.5, 
+    rootMargin: `${headerHeight}px`
+  });
+
+  observer.observe(headerElement);
+});
+</script>

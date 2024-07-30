@@ -1,0 +1,23 @@
+<a class="sc-scroll-to-top" id="sc-scroll-to-top" data-js="scroll-top">
+  {%- render 'shared/icons/chevron_up', width: '14', height: '16' %}
+</a>
+
+<script type="text/javascript">
+  var btn = document.querySelector('[data-js=scroll-top]');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 10) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
