@@ -1,9 +1,9 @@
 {%- liquid 
-  default product: blank
-  default show_compare: false
-  default home_page: false
-  assign home_page = current_page.home_page?
-%}
+    default product: blank
+    default show_compare: false
+    default home_page: false
+    assign home_page = current_page.home_page?
+-%}
 
 <div class="SC-ProductCard sc-gap-medium sc-border-lightest sc-border-radius" id="product_{{ product.id }}">
   {%- comment %} Image {% endcomment %}

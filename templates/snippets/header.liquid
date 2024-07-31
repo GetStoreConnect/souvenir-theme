@@ -28,9 +28,9 @@
 
     <header class="sc-header" id="sc-header">
       <div class="sc-header_top sc-hide-up-to-large">
-        {% if top_header_state == 'active' %}
+        {%- if top_header_state == 'active' %}
           {%- render 'header/top_menu' %}
-        {% endif %}
+        {%- endif %}
       </div>
       {%- render "header/geolocation" %}
       <div class="sc-header_search sc-flex sc-justify-center sc-pt-medium is-hidden" data-toggle-visibility-target="sc-header_search">

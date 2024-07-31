@@ -1,9 +1,9 @@
 {%- liquid 
-  assign free_shipping_option = theme_variables["header.free.shipping.option"] | default: blank
-  assign free_shipping_target = theme_variables["header.free.shipping.target"] | default: blank
-  assign free_shipping_label = theme_variables["header.free.shipping.label"] | default: blank
-  assign free_shipping_sub_label = theme_variables["header.free.shipping.sub.label"] | default: blank 
-%}
+    assign free_shipping_option = theme_variables["header.free.shipping.option"] | default: blank
+    assign free_shipping_target = theme_variables["header.free.shipping.target"] | default: blank
+    assign free_shipping_label = theme_variables["header.free.shipping.label"] | default: blank
+    assign free_shipping_sub_label = theme_variables["header.free.shipping.sub.label"] | default: blank 
+-%}
 
 {%- if free_shipping_option == 'active' %}
 <div class="sc-header_box sc-hide-up-to-large">

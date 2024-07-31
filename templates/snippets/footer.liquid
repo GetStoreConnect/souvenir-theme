@@ -1,9 +1,9 @@
 {%- cache "footer", items: [current_store, current_customer, current_privacy] -%}
   {%- liquid 
-    default home_page: false
-    assign home_page = current_page.home_page?
-    assign footer_return_policy_url = theme_variables["footer.return.policy.url"] | default: blank 
-  %}
+      default home_page: false
+      assign home_page = current_page.home_page?
+      assign footer_return_policy_url = theme_variables["footer.return.policy.url"] | default: blank 
+  -%}
 
   {%- if current_store.footer != blank %}
     {{ current_store.footer.render }}
@@ -11,9 +11,8 @@
     {%- unless home_page == true or current_request.path contains '/checkout' %}
       <div class="sc-pe-spacious"></div>
     {%- endunless %}
+    
     {%- comment -%}To do {% endcomment %}
-    {{ all_content_blocks['tsc-home-page-join-the-fine-life-society'].render }}
-
     <footer class="SC-Footer sc-p-none sc-font-secondary" id="SC-Footer">
           
       <div class="SC-Footer_navigation sc-container sc-pt-large">

@@ -1,12 +1,12 @@
-{% liquid 
-  assign footer_store_address = theme_variables["footer.store.location.address"] | default: blank
-  assign footer_store_opening_hours = theme_variables["footer.store.opening.hours"] | default: blank 
-  assign footer_store_phone_number = theme_variables["footer.store.location.phone.number"] | default: blank
-  assign footer_store_fb_link = theme_variables["footer.store.facebook.link"] | default: blank
-  assign footer_store_fb_link_label = theme_variables["footer.store.facebook.link.label"] | default: blank
-  assign footer_store_linkedin_link = theme_variables["footer.store.linkedin.link"] | default: blank
-  assign footer_store_linkedin_link_label = theme_variables["footer.store.linkedin.link.label"] | default: blank
-%}
+{%- liquid 
+    assign footer_store_address = theme_variables["footer.store.location.address"] | default: blank
+    assign footer_store_opening_hours = theme_variables["footer.store.opening.hours"] | default: blank 
+    assign footer_store_phone_number = theme_variables["footer.store.location.phone.number"] | default: blank
+    assign footer_store_fb_link = theme_variables["footer.store.facebook.link"] | default: blank
+    assign footer_store_fb_link_label = theme_variables["footer.store.facebook.link.label"] | default: blank
+    assign footer_store_linkedin_link = theme_variables["footer.store.linkedin.link"] | default: blank
+    assign footer_store_linkedin_link_label = theme_variables["footer.store.linkedin.link.label"] | default: blank
+-%}
 
 <section class="SC-Footer_section">
   <div class="sc-container">
