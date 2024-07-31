@@ -1,0 +1,70 @@
+{%- liquid 
+    assign first_link =  theme_variables["top.menu.item.1.link"] | default: blank
+    assign first_link_label = theme_variables["top.menu.item.1.link.label"] | default: blank    
+    assign top_menu_phone_number = theme_variables["top.menu.item.phone.number"] | default: blank
+    assign top_menu_phone_number_label = theme_variables["top.menu.item.phone.label"] | default: blank
+    assign top_menu_contact = theme_variables["top.menu.item.contact.target"] | default: blank
+    assign top_menu_contact_label = theme_variables["top.menu.item.contact.label"] | default: blank
+    assign top_menu_account_options = theme_variables["top.menu.account.options"] | default: blank
+    assign top_menu_create_account = theme_variables["top.menu.create.account.option"] | default: blank
+    assign top_menu_create_account_label = theme_variables["top.menu.create.account.label"] | default: blank 
+-%}
+
+<div class="sc-header_top_inner sc-flex sc-justify-end sc-ps-small sc-lg:ps-large sc-ms-auto">
+  {% comment %} left side {% endcomment %}
+  <div class="sc-one-half sc-flex sc-align-items-center sc-gap-medium">
+    {% comment %} home icon {% endcomment %}
+    <div class="sc-flex sc-justify-center">
+      <a href="{{ current_store.home_path }}" class="sc-uppercase sc-font-micro sc-font-bold">
+        {%- render 'shared/icons/house', width: '16px' %}
+      </a>
+    </div>    
+    {% comment %} First link - left side {% endcomment %}
+    {% unless first_link == blank and first_link_label == blank %}
+      <div class="sc-flex sc-justify-center">
+        <a href="{{ current_store.url }}{{ first_link }}" class="sc-uppercase sc-font-micro sc-font-bold">
+          {{ first_link_label }}
+        </a>
+      </div>
+    {%- endunless %}
+  </div>
+
+  {% comment %} right side {% endcomment %}
+  <div class="sc-one-half sc-flex sc-justify-end">
+   {% comment %} account {% endcomment %}
+   {% if top_menu_account_options == 'active' %}
+    <div class="sc-flex sc-justify-center sc-gap-medium sc-ps-medium sc-pe-tiny">
+      {% if current_customer == blank %}
+      <a href="{{ current_store.login_path }}" class="sc-pt-small sc-pb-tiny sc-uppercase sc-font-micro sc-font-bold sc-flex sc-align-items-center sc-gap-tiny">
+        {%- render 'shared/icons/lock', width: '14', height: '16', style_class: 'sc-mb-micro' %}
+        <span>{{ "header.dropdowns.account.login" | t }}</span>
+      </a>
+      {% if top_menu_create_account == 'active' %}
+      <a href="{{ current_store.url }}/accounts/register" class="sc-pt-small sc-pb-tiny sc-uppercase sc-font-micro sc-font-bold sc-flex sc-align-items-center sc-gap-tiny">
+        {%- render "shared/icons/plus_circle", width: '16px', height: '16px' %}
+        <span>{{ top_menu_create_account_label }}</span>
+      </a>
+      {% endif %}
+      {% else %}
+        <a href="{{ current_store.account_path }}" class="sc-pt-small sc-pb-tiny sc-uppercase sc-font-micro sc-font-bold">
+          {{ "header.dropdowns.account.profile" | t }}
+        </a>
+      {% endif %}
+    </div>
+    {% endif %}
+   {% comment %} contact numbers {% endcomment %}
+    <div class="sc-flex sc-justify-center sc-align-items-center sc-gap-medium sc-pl-medium sc-pe-tiny">
+      {% comment %} Phone number {% endcomment %}
+      {% unless top_menu_phone_number == blank and top_menu_phone_number_label == blank %}
+      <a href="{{ top_menu_phone_number }}" class="sc-pt-small sc-pb-tiny sc-uppercase sc-font-micro sc-font-bold sc-flex sc-align-items-center sc-gap-tiny">
+        {%- render "shared/icons/phone", width: '16px', height: '16px' %}
+        <span>{{ top_menu_phone_number_label }}</span>
+      </a> 
+      {% endunless %}
+      {% comment %} Contact {% endcomment %}
+      {% unless top_menu_contact == blank and top_menu_contact_label == blank %}
+        <a href="{{ top_menu_contact }}" class="sc-pt-small sc-pb-tiny sc-uppercase sc-font-micro sc-font-bold">{{ top_menu_contact_label }}</a>
+      {% endunless %}
+    </div>
+  </div>
+</div>

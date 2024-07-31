@@ -1,0 +1,12 @@
+{% assign image_fit = theme_variables['sc.product.image.fit'] | default: blank %}
+
+{%- if image_contain == true %}
+<style>
+  .SC-ProductCard_image {
+    aspect-ratio: 1/1;
+  }
+  .SC-ProductCard_image img {
+    object-fit: contain;
+  }
+</style>
+{%- endif %}

@@ -38,15 +38,6 @@
         </div>
       {%- endif %}
       
-      {% comment %} Decision making: UX 
-      {%- if content_block.link_label != blank and content_block.link_target != blank %}
-      <div class="sc-flex sc-justify-center sc-three-quarters sc-ms-auto sc-mt-medium">
-        <a href="{{ content_block.link_target }}" class="SC-Button SC-Button-outline sc-font-medium sc-font-normal sc-uppercase">
-          {{ content_block.link_label }}
-        </a>
-      </div>
-      {%- endif %}
-      {% endcomment %}
     </div>
   {%- endif %}
 </div>

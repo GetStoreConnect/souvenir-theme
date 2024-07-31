@@ -1,0 +1,40 @@
+{%- cache "footer", items: [current_store, current_customer, current_privacy] -%}
+  {%- liquid 
+      default home_page: false
+      assign home_page = current_page.home_page?
+      assign footer_return_policy_url = theme_variables["footer.return.policy.url"] | default: blank 
+  -%}
+
+  {%- if current_store.footer != blank %}
+    {{ current_store.footer.render }}
+  {%- else %}
+    {%- unless home_page == true or current_request.path contains '/checkout' %}
+      <div class="sc-pe-spacious"></div>
+    {%- endunless %}
+    
+    {%- comment -%}To do {% endcomment %}
+    <footer class="SC-Footer sc-p-none sc-font-secondary" id="SC-Footer">
+          
+      <div class="SC-Footer_navigation sc-container sc-pt-large">
+        {%- if current_store.footer_menu != blank %}
+          {{ current_store.footer_menu.render }}
+        {%- endif %}
+      </div>
+
+      {%- render "footer/info_section" %}
+      
+      <div class="SC-Footer_bottom sc-bg-darkest sc-shade-lightest sc-pt-medium sc-pb-medium">
+        <div class="sc-container sc-flex-col-to-row sc-gap sc-justify-center sc-font-tiny">
+          <span>&copy; {{ current_store.name | default: "StoreConnect" }} {{ current_store.timezone | now | date: "%Y" }}</span>
+          {%- if footer_return_policy_url != blank %}
+            <a href="{{ footer_return_policy_url }}">{{ "Refund Policy" }}</a>
+          {%- endif %}
+          <a href="{{ current_store.terms_conditions_page.url }}">{{ "Terms and Conditions" }}</a>
+          {%- if current_privacy.accepted? %}
+              <a class="sc-show-privacy-settings">{{ "privacy.manage_settings" | t }}</a>
+          {%- endif %}
+        </div>
+      </div>
+    </footer>
+  {%- endif %}
+{%- endcache %}

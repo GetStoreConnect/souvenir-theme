@@ -1,13 +1,13 @@
-<div class="sc-free-shipping-bar" id="sc-section-{{ content_block.identifier }}">
+<div class="sc-free-shipping-bar sc-flex sc-align-items-center sc-justify-center" id="sc-section-{{ content_block.identifier }}">
   <div class="sc-flex-col-to-row sc-justify-center sc-gap-small">
     {%- if content_block.image != blank %}
       <img width="46" src="{{ content_block.image.url }}" alt="{{ content_block.alt_text }}" class="sc-hide-up-to-medium">
     {%- endif %}
     {%- if content_block.title != blank %}
-      <span class="bold sc-uppercase">{{ content_block.title }}</span>
+      <span class="sc-uppercase bold">{{ content_block.title }}</span>
     {%- endif %}
     {%- if content_block.subtitle %}
-      <span class="normal sc-uppercase">{{ content_block.subtitle }}</span>
+      <span class="sc-uppercase normal">{{ content_block.subtitle }}</span>
     {%- endif %}
   </div>
 </div>
