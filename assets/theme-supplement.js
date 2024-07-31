@@ -38,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 
-  const headerElement = document.querySelector("#sc-header");
+  // const headerElement = document.querySelector("#sc-header");
+  const headerElement = document.querySelector('[data-header]');
   const headerHeight = headerElement.getBoundingClientRect().height / 2;
-  const navElement = document.querySelector("div.SC-Navbar");
+  const navElement = document.querySelector('[data-navbar]');
 
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
