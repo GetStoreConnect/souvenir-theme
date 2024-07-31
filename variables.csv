@@ -1,0 +1,24 @@
+Key,Value
+footer.store.facebook.link,https://www.facebook.com/StoreConnectHQ
+footer.store.facebook.link.label,StoreConnectHQ
+footer.store.linkedin.link,https://www.linkedin.com/company/storeconnect
+footer.store.linkedin.link.label,Linkedin @storeconnect
+footer.store.location.address,"Level 22, Sydney Place 180 George Street Sydney, NSW, 2000, AUS"
+footer.store.location.phone.number,02 8365 2308
+footer.store.opening.hours,(Monday - Friday 9am-5pm)
+header.free.shipping.label,Free shipping
+header.free.shipping.option,active
+header.free.shipping.sub.label,for orders over $100
+header.free.shipping.target,/
+header.search.bar.title,"Supplying quality products for over 20 years"
+header.top.header.state,active
+sc.product.image.fit,true	
+top.menu.account.options,active
+top.menu.item.1.link,/products	
+top.menu.item.1.link.label,Store
+top.menu.item.contact.label,Contact us
+top.menu.item.contact.target,mailto:info@getstoreconnect.com
+top.menu.item.phone.label,02 8365 2308
+top.menu.item.phone.number,0283652308
+top.menu.create.account.option,active
+top.menu.create.account.label,Create account
