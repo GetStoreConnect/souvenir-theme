@@ -26,7 +26,7 @@
     {% comment %}Top header content {% endcomment %}
     {%- assign top_header_state = theme_variables["header.top.header.state"] | default: blank %}
 
-    <header class="sc-header" id="sc-header">
+    <header class="sc-header" id="sc-header" data-header>
       <div class="sc-header_top sc-hide-up-to-large">
         {%- if top_header_state == 'active' %}
           {%- render 'header/top_menu' %}
@@ -67,7 +67,7 @@
           </ul>
         </div>
       </nav>
-      <div class="SC-Navbar">
+      <div class="SC-Navbar" data-navbar>
         <div class="SC-Navbar_inner sc-ms-auto">
           <nav class="sc-nav sc-pos-relative sc-flex sc-gap sc-align-items-center">
             {%- if current_store.header_menu != blank %}
