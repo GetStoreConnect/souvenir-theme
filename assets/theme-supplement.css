@@ -999,6 +999,31 @@
   right: 0;
 }
 
+.tns-controls button {
+  background-color: white;
+  border-radius: var(--sc-border-radius);
+  box-shadow: var(--sc-box-shadow);
+  top: 40%;
+  width: 45px;
+  height: 30px;
+}
+@media screen and (min-width: 768px) {
+  .tns-controls button {
+    width: 50px;
+    height: 35px;
+  }
+}
+.tns-controls button[data-controls=prev] {
+  left: 0;
+}
+.tns-controls button[data-controls=next] {
+  right: 0;
+}
+
+.tns-nav button.tns-nav-active {
+  background: white;
+}
+
 .sc-border-right-white {
   border-color: white;
 }
