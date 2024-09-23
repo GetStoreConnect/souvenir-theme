@@ -4,12 +4,12 @@
 -%}
 
 <div
-  class="SC-ContentBlock SC-FeaturedProducts{% if count >= 4 %} tns-cards{% endif %} sc-ps sc-pe"
+  class="SC-ContentBlock SC-FeaturedProducts{% if count >= 4 %} tns-cards{% endif %}"
   id="{% if content_block.identifier != blank %}SC-ContentBlock-{{ content_block.identifier }}{% endif %}"
   data-cb="{{ content_block.identifier }}">
 
   {%- if content_block.products.size > 0 %}
-    <div class="SC-CardCarousel">
+    <div class="SC-CardCarousel sc-ps sc-pe">
       <div class="SC-CardCarousel_header sc-section_header sc-three-quarters-medium-and-up sc-ms-auto sc-flex-col {% if alignment == 'center-text' %}sc-text-center{% endif %}">
         {%- unless content_block.title == blank %}
           <h2 class="SC-CardCarousel_heading sc-section_heading">
