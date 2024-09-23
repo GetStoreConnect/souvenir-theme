@@ -1,8 +1,10 @@
-{% assign alignment = content_block.alignment %}
-{% assign count = content_block.products.size %}
+{%- liquid
+    assign alignment = content_block.alignment
+    assign count = content_block.products.size 
+-%}
 
 <div
-  class="SC-ContentBlock SC-FeaturedProducts{% if count >= 4 %} tns-cards{% endif %}"
+  class="SC-ContentBlock SC-FeaturedProducts{% if count >= 4 %} tns-cards{% endif %} sc-ps sc-pe"
   id="{% if content_block.identifier != blank %}SC-ContentBlock-{{ content_block.identifier }}{% endif %}"
   data-cb="{{ content_block.identifier }}">
 
