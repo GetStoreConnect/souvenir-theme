@@ -4,6 +4,8 @@
   <h1>{{ "products.index.all_products" | t  }}</h1>
 
   <div class="SC-Grid">
+    {%- require "scripts/sort.js" -%}
+
     {%# search/filters/sort_dropdown below uses JavaScript that requires following DOM: form.data-filters input[name=sort] %}
     <form url="{{ current_search.path }}" method="get" class="is-hidden" local="true" data-filters scope>
       <input name="{{ current_search.fields.sort.name }}" type="hidden" value="{{ current_search.fields.sort.value }}"/>

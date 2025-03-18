@@ -1,4 +1,4 @@
-{%- liquid 
+{%- liquid
     default product: blank
     default show_compare: false
     default home_page: false
@@ -187,6 +187,8 @@
     {%- endif %}
     {%- comment %} Compare {% endcomment %}
     {%- if show_compare %}
+      {%- require "scripts/product-comparison.js" -%}
+
       <div class="sc-me-tiny">
         <label class="SC-Checkbox">
           <input data-js-compare-add id="{{ product.id }}" class="SC-Checkbox_input" type="checkbox"/>

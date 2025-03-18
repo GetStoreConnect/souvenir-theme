@@ -1,10 +1,12 @@
 {%- cache "header", items: [current_store, current_customer, current_cart]  -%}
   {% liquid
-    assign menu_identifier = current_store.header_menu | try: "identifier" | default: "header"  
+    assign menu_identifier = current_store.header_menu | try: "identifier" | default: "header"
   %}
   {%- if current_store.header != blank %}
     {{ current_store.header.render }}
   {%- else %}
+    {%- require "scripts/menu.js" -%}
+
     {%- capture store_logo %}
       <a href="{{ current_store.home_path }}" class="SC-Logo">
         {%- if current_store.logo != blank %}
@@ -61,7 +63,7 @@
           {%- render "header/boxes" %}
         </div>
 
-        <div class="sc-header_inner_right"> 
+        <div class="sc-header_inner_right">
           <ul class="sc-menu sc-flex sc-gap-base sc-align-items-center sc-justify-end sc-font-small">
             {%- render "header/dropdown/cart" %}
           </ul>
