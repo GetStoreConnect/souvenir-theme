@@ -1,9 +1,10 @@
 # Souvenir Theme
 
+**Version: StoreConnect v19**
+
 The StoreConnect Souvenir Theme is a versatile and multi-purpose solution ideal for a wide range of retail industries, including gift shops, clothing boutiques, and fashion stores. Whether you’re selling cosmetics, apparel, or curated collections, this theme offers a sophisticated and clean design that enhances your store’s visual appeal and functionality. With its built-in features that emphasize product upselling, the Souvenir Theme ensures customers can easily explore and discover your offerings.
 
 ![souvenir_theme](https://github.com/user-attachments/assets/86f28dcd-dbc6-4fcd-af46-1a3ee05170ca)
-
 
 ## Directory Structure
 
@@ -39,7 +40,7 @@ To install the Souvenir Theme, upload the provided zip file to your Salesforce o
 
 ## How to Add Content Blocks to Picklist
 
-You can follow the instructions in this document to [add content blocks to the picklist](https://help.getstoreconnect.com/documentation/adding-templates-to-content-template-picklist.html).
+You can follow the instructions in this document to [add content blocks to the picklist](https://support.getstoreconnect.com/article/adding-templates-to-content-template-picklist).
 
 ## Configuration
 
@@ -49,5 +50,5 @@ The first step is to download this repository as a `zip` and then upload it to y
 
 For additional guidance and support, please refer to the recommended help articles linked within the StoreConnect documentation.
 
-- StoreConnect [Theme Builder Reference](https://help.getstoreconnect.com/documentation/themes/theme-reference.html)
-- StoreConnect [Liquid Reference](https://help.getstoreconnect.com/documentation/liquid/liquid-reference.html)
+- StoreConnect [Theme Builder Reference](https://support.getstoreconnect.com/article/Themes)
+- StoreConnect [Liquid Reference](https://support.getstoreconnect.com/article/Liquid-Objects)
