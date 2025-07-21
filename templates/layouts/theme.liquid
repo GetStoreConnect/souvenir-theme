@@ -30,9 +30,6 @@
     {% if current_store.global_css != blank %}<style>{{ current_store.global_css }}</style>{% endif %}
     {%- render "styles" %}
 
-    {% comment %} External Library {% endcomment %}
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
     {%- comment -%} Scripts {%- endcomment -%}
     {%- require "scripts/configure.js" %}
     {%- require "scripts/metadata.js" %}
@@ -64,12 +61,7 @@
       {%- render "store/selector" %}
       {%- render "footer" %}
       {%- render "store/body" %}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js" defer preload></script>
-      {% comment %} Avoids loading on pages where is no needed {% endcomment %}
-      {% if current_product %}
-        {% render "shared/assets/modal_slider" %}
-      {% endif %}
-      {% render "shared/assets/scroll_reveal" %}
+      {%- render "shared/scroll_to_top" %}
     {%- endif %}
   </body>
 </html>
