@@ -1,8 +1,8 @@
 Key,Value
 footer.store_facebook_link,https://www.facebook.com/StoreConnectHQ
-footer.store_facebook_link.label,StoreConnectHQ
+footer.store_facebook_link_label,StoreConnectHQ
 footer.store_linkedin_link,https://www.linkedin.com/company/storeconnect
-footer.store_linkedin_link.label,Linkedin @storeconnect
+footer.store_linkedin_link_label,Linkedin @storeconnect
 footer.store_location_address,"Level 22, Sydney Place 180 George Street Sydney, NSW, 2000, AUS"
 footer.store_location_phone_number,02 8365 2308
 footer.store_opening_hours,(Monday - Friday 9am-5pm)
@@ -11,6 +11,6 @@ header.free_shipping_label,Free shipping
 header.free_shipping_option,active
 header.free_shipping_sub_label,for orders over $100
 header.free_shipping_target,/
-header.top.header_state,active
+header.top_header_state,active
 sc.product.image_fit,true
 top.menu.left_side_message_display,true
