@@ -2,3 +2,5 @@ Key,Value
 header.search.placeholder,Search for products
 top.menu.actionable_message,<a href="/products"> Get 15% off when you subscribe to our regular updates</a>
 top.menu.support_label,<a href="/contact-us">Help & FAQs</a>
+footer.return_policy_label,Return Policy
+footer.terms_label,Terms and Conditions
