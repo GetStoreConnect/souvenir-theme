@@ -1,24 +1,24 @@
 {%- liquid 
-    assign free_shipping_option = theme_variables["header.free.shipping.option"] | default: blank
-    assign free_shipping_target = theme_variables["header.free.shipping.target"] | default: blank
-    assign free_shipping_label = theme_variables["header.free.shipping.label"] | default: blank
-    assign free_shipping_sub_label = theme_variables["header.free.shipping.sub.label"] | default: blank 
+    assign free_shipping_option = theme_variables["header.free_shipping_option"] | default: blank
+    assign free_shipping_target = theme_variables["header.free_shipping_target"] | default: blank
+    assign free_shipping_label = theme_variables["header.free_shipping_label"] | default: blank
+    assign free_shipping_sub_label = theme_variables["header.free_shipping_sub_label"] | default: blank 
 -%}
 
 {%- if free_shipping_option == 'active' %}
-<div class="sc-header_box sc-hide-up-to-large">
-  {% if free_shipping_target != blank %}
-  <a href="{{ free_shipping_target }}">
-    {%- render "shared/icons/truck", height: 16, width: 20, style_class: 'sc-color-darkest' %}
-    <span class="sc-font-bold sc-font-secondary sc-uppercase sc-pl-tiny">{{ free_shipping_label }}</span><br>
-    <span class="sc-font-tiny sc-font-secondary" style="opacity: 0.8;">{{ free_shipping_sub_label }}</span>
-  </a>
-  {% else %}
-    <span class="sc-display-block">
-      {%- render "shared/icons/truck", height: 16, width: 20, style_class: 'sc-color-darkest' %}
-      <span class="sc-font-bold sc-font-secondary sc-uppercase sc-pl-tiny">{{ free_shipping_label }}</span><br>
-      <span class="sc-font-tiny sc-font-secondary" style="opacity: 0.8;">{{ free_shipping_sub_label }}</span>
-    </span>
-  {% endif %}
-</div>
+  <li class="sc-header_box sc-hide-up-to-large">
+    {%- if free_shipping_target != blank %}
+      <a class="sc-inline-flex sc-flex-wrap" href="{{ free_shipping_target }}">
+        {%- render "shared/icons/truck", width: 23, style_class: 'sc-icon-no-fill' %}
+        <span class="sc-font-bold sc-font-secondary sc-pl-tiny">{{ free_shipping_label }}</span><br>
+        <span class="sc-font-tiny sc-font-secondary">{{ free_shipping_sub_label }}</span>
+      </a>
+    {%- else %}
+      <span class="sc-inline-flex sc-flex-wrap">
+        {%- render "shared/icons/truck", width: 23, style_class: 'sc-icon-no-fill' %}
+        <span class="sc-font-bold sc-font-secondary sc-pl-tiny">{{ free_shipping_label }}</span><br>
+        <span class="sc-font-tiny sc-font-secondary">{{ free_shipping_sub_label }}</span>
+      </span>
+    {%- endif %}
+  </li>
 {%- endif %}

@@ -6,7 +6,8 @@
     {{ current_store.header.render }}
   {%- else %}
     {%- require "scripts/menu.js" -%}
-
+    {%- require "scripts/sticky-header.js" %}
+    
     {%- capture store_logo %}
       <a href="{{ current_store.home_path }}" class="SC-Logo">
         {%- if current_store.logo != blank %}
@@ -26,10 +27,10 @@
     {%- endcapture %}
 
     {% comment %}Top header content {% endcomment %}
-    {%- assign top_header_state = theme_variables["header.top.header.state"] | default: blank %}
+    {%- assign top_header_state = theme_variables["header.top_header_state"] | default: blank %}
 
     <header class="sc-header" id="sc-header" data-header>
-      <div class="sc-header_top sc-hide-up-to-large">
+      <div class="sc-header_top">
         {%- if top_header_state == 'active' %}
           {%- render 'header/top_menu' %}
         {%- endif %}
@@ -40,11 +41,11 @@
         {%- render "header/search" %}
         </div>
       </div>
-      <nav class="sc-header_inner sc-flex sc-justify-space-between sc-align-items-center sc-gap-small sc-gap-large-medium-and-up sc-expand sc-ps-small sc-lg:pt-small sc-md:ps-medium sc-lg:ps-large sc-ms-auto">
+      <nav class="sc-header_inner sc-flex sc-justify-space-between sc-align-items-center sc-gap-small sc-gap-large-medium-and-up sc-expand sc-ps-small sc-md:ps-medium sc-lg:ps-large sc-ms-auto">
         <div class="sc-header_inner_left">
           <button
             data-menu-init="{{ menu_identifier }}"
-            class="SC-Icon sc-hide-large-and-up"
+            class="SC-Icon SC-Icon-medium sc-hide-large-and-up"
             type="button">
             {%- render "shared/icons/hamburger", style_class: "sc-pointer-events-none" %}
           </button>
@@ -60,11 +61,11 @@
           <div class="sc-grow sc-hide-up-to-large">
             {%- render "header/search" %}
           </div>
-          {%- render "header/boxes" %}
         </div>
 
         <div class="sc-header_inner_right">
           <ul class="sc-menu sc-flex sc-gap-base sc-align-items-center sc-justify-end sc-font-small">
+            {%- render "header/boxes" %}
             {%- render "header/dropdown/cart" %}
           </ul>
         </div>

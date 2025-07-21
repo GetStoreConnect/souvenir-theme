@@ -1,6 +1,6 @@
 # Souvenir Theme
 
-**Version: StoreConnect v19**
+**Version: StoreConnect v20**
 
 The StoreConnect Souvenir Theme is a versatile and multi-purpose solution ideal for a wide range of retail industries, including gift shops, clothing boutiques, and fashion stores. Whether you’re selling cosmetics, apparel, or curated collections, this theme offers a sophisticated and clean design that enhances your store’s visual appeal and functionality. With its built-in features that emphasize product upselling, the Souvenir Theme ensures customers can easily explore and discover your offerings.
 
@@ -12,7 +12,7 @@ Developed using the [Base Theme](https://github.com/GetStoreConnect/base-theme) 
 
 ## Theme Installer
 
-To install the Souvenir Theme, upload the provided zip file to your Salesforce org using the theme importer located in the StoreConnect Themes app.
+To install the Souvenir Theme, upload the provided zip file to your Salesforce org using the [theme importer](https://support.getstoreconnect.com/article/Theme-Importer) located in the StoreConnect Themes app.
 
 ## Features
 
