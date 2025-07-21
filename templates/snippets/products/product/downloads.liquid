@@ -1,0 +1,15 @@
+{%- if product.downloads_content != blank %}
+  {%- capture content %}
+    <div class="sc-rich-text">
+      <div>
+        {{ product.downloads_content }}
+      </div>
+    </div>
+  {%- endcapture %}
+
+  {%- capture icon %}
+    {%- render "shared/icons/cloud", style_class: "sc-icon-no-fill", width: 20 %}
+  {%- endcapture %}
+
+  {% render "shared/accordion", heading: product.downloads_label, content: content, icon: icon %}
+{%- endif %}
