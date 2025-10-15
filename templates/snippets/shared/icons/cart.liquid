@@ -1,8 +1,8 @@
-{%- default style_class: blank -%}
-{%- default width: blank -%}
-{%- default height: blank -%}
+{%- default style_class: nil -%}
+{%- default width: nil -%}
+{%- default height: nil -%}
 
-<svg{% if style_class != blank %} class="{{ style_class }}"{% endif %}{% if width != blank %} width="{{ width }}"{% endif %}{% if height != blank %} height="{{ height }}"{% endif %} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<svg{% if style_class != nil %} class="{{ style_class }}"{% endif %}{% if width != nil %} width="{{ width }}"{% endif %}{% if height != nil %} height="{{ height }}"{% endif %} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="8" cy="21" r="1"/>
   <circle cx="19" cy="21" r="1"/>
   <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>

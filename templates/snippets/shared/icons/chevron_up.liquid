@@ -1,7 +1,7 @@
-{%- default width: blank -%}
-{%- default height: blank -%}
-{%- default style_class: blank -%}
+{%- default width: nil -%}
+{%- default height: nil -%}
+{%- default style_class: nil -%}
 
-<svg{% if height != blank %} height="{{ height }}"{% endif %}{% if width != blank %} width="{{ width }}"{% endif %}{% if style_class != blank %} class="{{ style_class }}"{% endif %} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<svg{% if height != nil %} height="{{ height }}"{% endif %}{% if width != nil %} width="{{ width }}"{% endif %}{% if style_class != nil %} class="{{ style_class }}"{% endif %} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="m18 15-6-6-6 6"/>
 </svg>
