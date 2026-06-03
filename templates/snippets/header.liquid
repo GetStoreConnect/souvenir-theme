@@ -7,7 +7,7 @@
   {%- else %}
     {%- require "scripts/menu.js" -%}
     {%- require "scripts/sticky-header.js" %}
-    
+
     {%- capture store_logo %}
       <a href="{{ current_store.home_path }}" class="SC-Logo">
         {%- if current_store.logo != blank %}
@@ -66,7 +66,7 @@
         <div class="sc-header_inner_right">
           <ul class="sc-menu sc-flex sc-gap-base sc-align-items-center sc-justify-end sc-font-small">
             {%- render "header/boxes" %}
-            {%- render "header/dropdown/cart" %}
+            {%- component "cart-menu", reload: "sc.cart-updated sc.voucher-applied sc.voucher-removed" %}
           </ul>
         </div>
       </nav>
