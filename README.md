@@ -1,10 +1,18 @@
 # Souvenir Theme
 
-**Version: StoreConnect v20**
+**Version: StoreConnect v21**
 
 The StoreConnect Souvenir Theme is a versatile and multi-purpose solution ideal for a wide range of retail industries, including gift shops, clothing boutiques, and fashion stores. Whether you’re selling cosmetics, apparel, or curated collections, this theme offers a sophisticated and clean design that enhances your store’s visual appeal and functionality. With its built-in features that emphasize product upselling, the Souvenir Theme ensures customers can easily explore and discover your offerings.
 
 ![souvenir_theme](https://github.com/user-attachments/assets/86f28dcd-dbc6-4fcd-af46-1a3ee05170ca)
+
+## What's New in v21
+
+- **Cart Menu Component:** Converted the cart dropdown into a reusable `components/cart-menu.liquid` with reactive reload support for cart and voucher events
+- **Bundle Pricing on Product Cards:** Added anchor product pricing display and corrected bundle button condition to `is_bundle?`
+- **Menu Group Attribute:** Added `data-menu-group` to top-level menu items for improved targeting and styling
+- **Deposit Display:** Added remaining deposit amount display to cart items
+- **Content Security Policy:** Added `content_security_policy_header` render to the theme layout
 
 ## Directory Structure
 
