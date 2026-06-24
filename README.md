@@ -6,14 +6,6 @@ The StoreConnect Souvenir Theme is a versatile and multi-purpose solution ideal 
 
 ![souvenir_theme](https://github.com/user-attachments/assets/86f28dcd-dbc6-4fcd-af46-1a3ee05170ca)
 
-## What's New in v21
-
-- **Cart Menu Component:** Converted the cart dropdown into a reusable `components/cart-menu.liquid` with reactive reload support for cart and voucher events
-- **Bundle Pricing on Product Cards:** Added anchor product pricing display and corrected bundle button condition to `is_bundle?`
-- **Menu Group Attribute:** Added `data-menu-group` to top-level menu items for improved targeting and styling
-- **Deposit Display:** Added remaining deposit amount display to cart items
-- **Content Security Policy:** Added `content_security_policy_header` render to the theme layout
-
 ## Directory Structure
 
 Developed using the [Base Theme](https://github.com/GetStoreConnect/base-theme) as a boilerplate. This repository contains only the customized, modified, and new templates, snippets, variables, or translations that have been developed for the Souvenir Theme. Any elements not included here will automatically fall back to the Base Theme's default templates, ensuring a seamless and consistent experience.
