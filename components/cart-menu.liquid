@@ -35,9 +35,9 @@
       {%# Include Express Checkout Wallets unless already on cart, payment_information page, or on a product page %}
       {%- if current_cart.total_subscriptions == 0 %}
         {%- unless current_request.path == current_store.cart_path or current_checkout_step == "payment_information" or current_product != blank %}
-          {%- if current_cart.currency_payment_required? %}
+          {%- if current_cart.currency_payment_required? and current_cart.quotable? == false %}
             <aside>
-              {% render "checkout/payment_information/show_wallets_only" %}
+              {% render "checkout/payment_information/show_wallets_only", skip_paypal_fastlane: true %}
             </aside>
           {%- endif %}
         {%- endunless %}
