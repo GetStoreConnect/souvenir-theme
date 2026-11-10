@@ -1,6 +1,6 @@
 # Souvenir Theme
 
-**Version: StoreConnect v21**
+**Version: StoreConnect v22**
 
 The StoreConnect Souvenir Theme is a versatile and multi-purpose solution ideal for a wide range of retail industries, including gift shops, clothing boutiques, and fashion stores. Whether you’re selling cosmetics, apparel, or curated collections, this theme offers a sophisticated and clean design that enhances your store’s visual appeal and functionality. With its built-in features that emphasize product upselling, the Souvenir Theme ensures customers can easily explore and discover your offerings.
 
